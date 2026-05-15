@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Times New Roman", Times, serif;
+
+  --color-black: #000000;
+  --color-white: #ffffff;
+  
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+
+  --color-blue-50: #eff6ff;
+  --color-blue-100: #dbeafe;
+  --color-blue-200: #bfdbfe;
+  --color-blue-300: #93c5fd;
+  --color-blue-400: #60a5fa;
+  --color-blue-500: #3b82f6;
+  --color-blue-600: #2563eb;
+  --color-blue-700: #1d4ed8;
+  --color-blue-800: #1e40af;
+  --color-blue-900: #1e3a8a;
+  
+  --color-red-50: #fef2f2;
+  --color-red-100: #fee2e2;
+  --color-red-200: #fecaca;
+  --color-red-300: #fca5a5;
+  --color-red-400: #f87171;
+  --color-red-500: #ef4444;
+  --color-red-600: #dc2626;
+  --color-red-700: #b91c1c;
+  --color-red-800: #991b1b;
+  --color-red-900: #7f1d1d;
+
+  --color-yellow-400: #fbbf24;
+  --color-yellow-500: #eab308;
+  --color-yellow-600: #ca8a04;
+}
+
+@layer base {
+  body {
+    @apply antialiased text-gray-900 bg-white;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e2e8f0;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #cbd5e1;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Base styles for the CV preview to ensure it stays A4 */
+.cv-preview-container {
+  overflow: visible;
+  display: flex;
+  justify-content: center;
+}
+
+#cv-preview {
+  margin: 0;
+  transform-origin: top center;
+  flex-shrink: 0;
+}
+
+@media (max-width: 1300px) {
+  #cv-preview { transform: scale(0.85); }
+}
+@media (max-width: 1100px) {
+  #cv-preview { transform: scale(0.75); }
+}
+@media (max-width: 900px) {
+  #cv-preview { transform: scale(0.65); }
+}
+@media (max-width: 768px) {
+  #cv-preview { transform: scale(0.8); } /* Editor is stacked now, more width available */
+}
+@media (max-width: 640px) {
+  #cv-preview { transform: scale(0.6); }
+}
+@media (max-width: 480px) {
+  #cv-preview { transform: scale(0.4); }
+}
+
+/* Print specific styles */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #cv-preview, #cv-preview * {
+    visibility: visible;
+  }
+  #cv-preview {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    width: 210mm;
+    height: 297mm;
+    transform: scale(1) !important;
+    box-shadow: none !important;
+  }
+}
