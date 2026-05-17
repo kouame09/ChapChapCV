@@ -30,7 +30,7 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
           >
             <button
               onClick={onClose}
-              className="absolute top-6 right-6 p-2 hover:bg-gray-100 rounded-full transition-colors"
+              className="cursor-pointer absolute top-6 right-6 p-2 hover:bg-gray-100 rounded-full transition-colors"
             >
               <X className="w-6 h-6 text-gray-400" />
             </button>
@@ -92,7 +92,7 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
                       href="https://www.princekouame.com" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm font-bold text-black hover:underline"
+                      className="cursor-pointer inline-flex items-center gap-2 text-sm font-bold text-black hover:underline"
                     >
                       <Globe className="w-4 h-4" /> www.princekouame.com
                     </a>
@@ -114,7 +114,7 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
                       href="https://pay.wave.com/m/M_ci_BzrF5N5Dmt4d/c/ci/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-8 py-4 bg-white text-black font-bold rounded-2xl flex items-center gap-3 shadow-xl transform transition hover:scale-105"
+                      className="cursor-pointer px-8 py-4 bg-white text-black font-bold rounded-2xl flex items-center gap-3 shadow-xl transform transition hover:scale-105"
                     >
                       <Coffee className="w-5 h-5" /> Contribution libre via Wave
                     </a>

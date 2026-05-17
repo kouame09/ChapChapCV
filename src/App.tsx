@@ -134,28 +134,28 @@ export default function App() {
         <div className="flex items-center gap-4">
           <button
             onClick={() => setIsAIOpen(true)}
-            className="flex items-center gap-2 px-4 py-2 bg-black text-white rounded-xl text-xs font-bold uppercase tracking-widest hover:scale-105 active:scale-95 transition-all shadow-lg shadow-black/10"
+            className="cursor-pointer flex items-center gap-2 px-4 py-2 bg-black text-white rounded-xl text-xs font-bold uppercase tracking-widest hover:scale-105 active:scale-95 transition-all shadow-lg shadow-black/10"
           >
             <Sparkles className="w-3.5 h-3.5 text-yellow-500 fill-yellow-500" />
             Import IA
           </button>
           <button
             onClick={() => setIsAboutOpen(true)}
-            className="flex items-center gap-2 px-4 py-2 text-xs font-semibold text-gray-500 hover:text-black uppercase tracking-widest transition-colors"
+            className="cursor-pointer flex items-center gap-2 px-4 py-2 text-xs font-semibold text-gray-500 hover:text-black uppercase tracking-widest transition-colors"
           >
             <Info className="w-3.5 h-3.5" />
             À propos
           </button>
           <button
             onClick={handleReset}
-            className="flex items-center gap-2 px-4 py-2 text-xs font-semibold text-gray-500 hover:text-black uppercase tracking-widest transition-colors"
+            className="cursor-pointer flex items-center gap-2 px-4 py-2 text-xs font-semibold text-gray-500 hover:text-black uppercase tracking-widest transition-colors"
           >
             <RefreshCw className="w-3.5 h-3.5" />
             Réinitialiser
           </button>
           <button
             onClick={handleDownloadPDF}
-            className="flex items-center gap-2 px-8 py-2.5 text-xs font-bold text-white bg-black hover:bg-gray-800 rounded-full transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed shadow-sm tracking-widest uppercase"
+            className="cursor-pointer flex items-center gap-2 px-8 py-2.5 text-xs font-bold text-white bg-black hover:bg-gray-800 rounded-full transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed shadow-sm tracking-widest uppercase"
           >
             <Download className="w-4 h-4" />
             Exporter PDF

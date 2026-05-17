@@ -195,7 +195,7 @@ export default function AIImportModal({ isOpen, onClose, onImport }: AIImportMod
                     Collez votre ancien CV ou importez un texte pour le transformer instantanément.
                   </p>
                 </div>
-                <button onClick={onClose} className="p-2 hover:bg-gray-100 rounded-full transition-colors">
+                <button onClick={onClose} className="cursor-pointer p-2 hover:bg-gray-100 rounded-full transition-colors">
                   <X className="w-5 h-5 text-gray-400" />
                 </button>
               </div>
@@ -218,7 +218,7 @@ export default function AIImportModal({ isOpen, onClose, onImport }: AIImportMod
                   <div className="absolute bottom-4 right-4 flex gap-2">
                     <button
                       onClick={() => fileInputRef.current?.click()}
-                      className="px-4 py-2 bg-white border border-gray-100 rounded-xl text-[10px] font-bold text-gray-400 hover:text-black hover:border-black transition-all flex items-center gap-2 uppercase tracking-widest"
+                      className="cursor-pointer px-4 py-2 bg-white border border-gray-100 rounded-xl text-[10px] font-bold text-gray-400 hover:text-black hover:border-black transition-all flex items-center gap-2 uppercase tracking-widest"
                     >
                       <Upload className="w-3 h-3" /> Fichier
                     </button>
@@ -229,7 +229,7 @@ export default function AIImportModal({ isOpen, onClose, onImport }: AIImportMod
                 <button
                   onClick={() => handleImport(text)}
                   disabled={loading || !text.trim()}
-                  className="w-full py-4 bg-black text-white rounded-2xl font-bold flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98] transition-all disabled:opacity-50 disabled:hover:scale-100"
+                  className="cursor-pointer w-full py-4 bg-black text-white rounded-2xl font-bold flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98] transition-all disabled:opacity-50 disabled:hover:scale-100"
                 >
                   {loading ? (
                     <>

@@ -105,7 +105,7 @@ export default function CVEditor({ data, onChange }: Props) {
                 <button
                   key={layout.id}
                   onClick={() => updateSettings('headerLayout', layout.id)}
-                  className={`px-3 py-2 text-[10px] font-bold rounded-xl border transition-all ${
+                  className={`cursor-pointer px-3 py-2 text-[10px] font-bold rounded-xl border transition-all ${
                     data.settings?.headerLayout === layout.id
                       ? 'bg-black text-white border-black'
                       : 'bg-white text-gray-400 border-gray-100 hover:border-gray-200'
@@ -130,7 +130,7 @@ export default function CVEditor({ data, onChange }: Props) {
                   <button
                     key={style.id}
                     onClick={() => updateSettings('photoStyle', style.id)}
-                    className={`flex-1 px-3 py-2 text-[10px] font-bold rounded-xl border transition-all ${
+                    className={`cursor-pointer flex-1 px-3 py-2 text-[10px] font-bold rounded-xl border transition-all ${
                       data.settings?.photoStyle === style.id
                         ? 'bg-black text-white border-black'
                         : 'bg-white text-gray-400 border-gray-100 hover:border-gray-200'
@@ -156,7 +156,7 @@ export default function CVEditor({ data, onChange }: Props) {
                 {data.personalInfo.profilePicture && (
                   <button
                     onClick={() => updatePersonalInfo('profilePicture', '')}
-                    className="p-2 text-gray-400 hover:text-red-500 transition-colors"
+                    className="cursor-pointer p-2 text-gray-400 hover:text-red-500 transition-colors"
                   >
                     <Trash2 className="w-3 h-3" />
                   </button>
@@ -225,7 +225,7 @@ export default function CVEditor({ data, onChange }: Props) {
               >
                 <button
                   onClick={() => removeItem('experiences', exp.id)}
-                  className="absolute top-4 right-4 p-2 text-gray-300 hover:text-black hover:bg-white rounded-full transition-all"
+                  className="cursor-pointer absolute top-4 right-4 p-2 text-gray-300 hover:text-black hover:bg-white rounded-full transition-all"
                 >
                   <Trash2 className="w-4 h-4" />
                 </button>
@@ -252,7 +252,7 @@ export default function CVEditor({ data, onChange }: Props) {
           </AnimatePresence>
           <button
             onClick={() => addItem('experiences', { id: Math.random().toString(), role: '', company: '', location: '', startDate: '', endDate: '', description: [] })}
-            className="w-full py-4 border border-dashed border-gray-200 rounded-2xl text-gray-400 hover:border-black hover:text-black flex items-center justify-center gap-2 transition-all font-semibold text-xs tracking-widest uppercase"
+            className="cursor-pointer w-full py-4 border border-dashed border-gray-200 rounded-2xl text-gray-400 hover:border-black hover:text-black flex items-center justify-center gap-2 transition-all font-semibold text-xs tracking-widest uppercase"
           >
             <Plus className="w-4 h-4" /> Ajouter Experience
           </button>
@@ -278,7 +278,7 @@ export default function CVEditor({ data, onChange }: Props) {
                 </div>
                 <button
                   onClick={() => removeItem('skills', skill.id)}
-                  className="p-3 text-gray-300 hover:text-black transition-colors"
+                  className="cursor-pointer p-3 text-gray-300 hover:text-black transition-colors"
                 >
                   <Trash2 className="w-4 h-4" />
                 </button>
@@ -287,7 +287,7 @@ export default function CVEditor({ data, onChange }: Props) {
           </AnimatePresence>
           <button
             onClick={() => addItem('skills', { id: Math.random().toString(), category: '', items: '' })}
-            className="w-full py-3 border border-dashed border-gray-200 rounded-xl text-gray-400 hover:border-black hover:text-black flex items-center justify-center gap-2 transition-all font-semibold text-[10px] tracking-widest uppercase"
+            className="cursor-pointer w-full py-3 border border-dashed border-gray-200 rounded-xl text-gray-400 hover:border-black hover:text-black flex items-center justify-center gap-2 transition-all font-semibold text-[10px] tracking-widest uppercase"
           >
             <Plus className="w-3 h-3" /> Ajouter Catégorie
           </button>
@@ -327,7 +327,7 @@ export default function CVEditor({ data, onChange }: Props) {
               >
                 <button
                   onClick={() => removeItem('projects', proj.id)}
-                  className="absolute top-4 right-4 p-2 text-gray-300 hover:text-black transition-all"
+                  className="cursor-pointer absolute top-4 right-4 p-2 text-gray-300 hover:text-black transition-all"
                 >
                   <Trash2 className="w-4 h-4" />
                 </button>
@@ -352,7 +352,7 @@ export default function CVEditor({ data, onChange }: Props) {
           </AnimatePresence>
           <button
             onClick={() => addItem('projects', { id: Math.random().toString(), name: '', techStack: '', date: '', description: [] })}
-            className="w-full py-4 border border-dashed border-gray-200 rounded-2xl text-gray-400 hover:border-black hover:text-black flex items-center justify-center gap-2 transition-all font-semibold text-xs tracking-widest uppercase"
+            className="cursor-pointer w-full py-4 border border-dashed border-gray-200 rounded-2xl text-gray-400 hover:border-black hover:text-black flex items-center justify-center gap-2 transition-all font-semibold text-xs tracking-widest uppercase"
           >
             <Plus className="w-4 h-4" /> Ajouter Projet
           </button>
@@ -381,7 +381,7 @@ export default function CVEditor({ data, onChange }: Props) {
                 </div>
                 <button
                   onClick={() => removeItem('certifications', cert.id)}
-                  className="p-3 text-gray-300 hover:text-black transition-colors"
+                  className="cursor-pointer p-3 text-gray-300 hover:text-black transition-colors"
                 >
                   <Trash2 className="w-4 h-4" />
                 </button>
@@ -390,7 +390,7 @@ export default function CVEditor({ data, onChange }: Props) {
           </AnimatePresence>
           <button
             onClick={() => addItem('certifications', { id: Math.random().toString(), name: '', issuer: '', year: '' })}
-            className="w-full py-3 border border-dashed border-gray-200 rounded-xl text-gray-400 hover:border-black hover:text-black flex items-center justify-center gap-2 transition-all font-semibold text-[10px] tracking-widest uppercase"
+            className="cursor-pointer w-full py-3 border border-dashed border-gray-200 rounded-xl text-gray-400 hover:border-black hover:text-black flex items-center justify-center gap-2 transition-all font-semibold text-[10px] tracking-widest uppercase"
           >
             <Plus className="w-3 h-3" /> Ajouter Certification
           </button>
@@ -413,7 +413,7 @@ export default function CVEditor({ data, onChange }: Props) {
               >
                 <button
                   onClick={() => removeItem('education', edu.id)}
-                  className="absolute top-4 right-4 p-2 text-gray-300 hover:text-black transition-all"
+                  className="cursor-pointer absolute top-4 right-4 p-2 text-gray-300 hover:text-black transition-all"
                 >
                   <Trash2 className="w-4 h-4" />
                 </button>
@@ -428,7 +428,7 @@ export default function CVEditor({ data, onChange }: Props) {
           </AnimatePresence>
           <button
             onClick={() => addItem('education', { id: Math.random().toString(), degree: '', school: '', location: '', year: '' })}
-            className="w-full py-4 border border-dashed border-gray-200 rounded-2xl text-gray-400 hover:border-black hover:text-black flex items-center justify-center gap-2 transition-all font-semibold text-xs tracking-widest uppercase"
+            className="cursor-pointer w-full py-4 border border-dashed border-gray-200 rounded-2xl text-gray-400 hover:border-black hover:text-black flex items-center justify-center gap-2 transition-all font-semibold text-xs tracking-widest uppercase"
           >
             <Plus className="w-4 h-4" /> Ajouter Formation
           </button>
@@ -470,7 +470,7 @@ export default function CVEditor({ data, onChange }: Props) {
                 </div>
                 <button
                   onClick={() => removeItem('languages', lang.id)}
-                  className="p-3 text-gray-300 hover:text-black transition-colors"
+                  className="cursor-pointer p-3 text-gray-300 hover:text-black transition-colors"
                 >
                   <Trash2 className="w-4 h-4" />
                 </button>
@@ -479,7 +479,7 @@ export default function CVEditor({ data, onChange }: Props) {
           </AnimatePresence>
           <button
             onClick={() => addItem('languages', { id: Math.random().toString(), name: '', level: '' })}
-            className="w-full py-3 border border-dashed border-gray-200 rounded-xl text-gray-400 hover:border-black hover:text-black flex items-center justify-center gap-2 transition-all font-semibold text-[10px] tracking-widest uppercase"
+            className="cursor-pointer w-full py-3 border border-dashed border-gray-200 rounded-xl text-gray-400 hover:border-black hover:text-black flex items-center justify-center gap-2 transition-all font-semibold text-[10px] tracking-widest uppercase"
           >
             <Plus className="w-3 h-3" /> Ajouter Langue
           </button>
@@ -519,7 +519,7 @@ export default function CVEditor({ data, onChange }: Props) {
               >
                 <button
                   onClick={() => removeItem('recommendations', rec.id)}
-                  className="absolute top-4 right-4 p-2 text-gray-300 hover:text-black transition-all"
+                  className="cursor-pointer absolute top-4 right-4 p-2 text-gray-300 hover:text-black transition-all"
                 >
                   <Trash2 className="w-4 h-4" />
                 </button>
@@ -534,7 +534,7 @@ export default function CVEditor({ data, onChange }: Props) {
           </AnimatePresence>
           <button
             onClick={() => addItem('recommendations', { id: Math.random().toString(), name: '', role: '', company: '', contact: '' })}
-            className="w-full py-4 border border-dashed border-gray-200 rounded-2xl text-gray-400 hover:border-black hover:text-black flex items-center justify-center gap-2 transition-all font-semibold text-xs tracking-widest uppercase"
+            className="cursor-pointer w-full py-4 border border-dashed border-gray-200 rounded-2xl text-gray-400 hover:border-black hover:text-black flex items-center justify-center gap-2 transition-all font-semibold text-xs tracking-widest uppercase"
           >
             <Plus className="w-4 h-4" /> Ajouter Recommandation
           </button>
@@ -549,7 +549,7 @@ function CollapsibleSection({ title, icon, children, isOpen, onToggle }: { title
     <div className="border border-gray-100 rounded-2xl overflow-hidden bg-white transition-all">
       <button
         onClick={onToggle}
-        className="w-full flex items-center justify-between p-5 text-left hover:bg-gray-50/50 transition-colors"
+        className="cursor-pointer w-full flex items-center justify-between p-5 text-left hover:bg-gray-50/50 transition-colors"
       >
         <div className="flex items-center gap-4">
           <div className="p-2 bg-gray-50 text-black rounded-lg">
