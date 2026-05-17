@@ -20,14 +20,14 @@ export default function CVPreview({ data, id }: Props) {
   const renderPhoto = () => {
     if (!personalInfo.profilePicture) return null;
     return (
-      <div 
+      <img
+        src={personalInfo.profilePicture}
+        alt={personalInfo.fullName}
         className={cn(
-          "shrink-0 overflow-hidden border border-gray-100 bg-gray-50 bg-center bg-cover bg-no-repeat",
+          "shrink-0 object-cover border border-gray-100 bg-gray-50",
           photoStyle === 'circle' ? "rounded-full" : "rounded-2xl",
           layout === 'center' ? "w-24 h-24 mx-auto mb-3" : "w-28 h-28"
         )}
-        style={{ backgroundImage: `url(${personalInfo.profilePicture})` }}
-        aria-label={personalInfo.fullName}
       />
     );
   };
@@ -62,8 +62,8 @@ export default function CVPreview({ data, id }: Props) {
             "flex items-center gap-1.5",
             isCoordsOnRight ? "flex-row-reverse" : "flex-row"
           )}>
-            <item.icon className="w-2.5 h-2.5 text-gray-400 shrink-0" />
-            <span className="leading-tight">{item.value}</span>
+            <item.icon className="w-3 h-3 text-gray-400 shrink-0 self-center" />
+            <span className="leading-none">{item.value}</span>
             {(isCenter && idx < items.length - 1) && <span className="text-gray-200 ml-1">|</span>}
           </div>
         ))}
