@@ -1,8 +1,6 @@
 import { CVData } from '../types';
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
-import { Github, Globe, Linkedin, Twitter, Facebook, Instagram, Mail, Phone, MapPin } from 'lucide-react';
-
 function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
@@ -35,38 +33,41 @@ export default function CVPreview({ data, id }: Props) {
 
   const renderContactInfo = (isRow = false) => {
     const items = [
-      { value: personalInfo.email, icon: Mail },
-      { value: personalInfo.phone, icon: Phone },
-      { value: personalInfo.location, icon: MapPin },
-      { value: personalInfo.website, icon: Globe },
-      { value: personalInfo.linkedin, icon: Linkedin },
-      { value: personalInfo.github, icon: Github },
-      { value: personalInfo.twitter, icon: Twitter },
-      { value: personalInfo.facebook, icon: Facebook },
-      { value: personalInfo.instagram, icon: Instagram },
-    ].filter(item => item.value);
+      personalInfo.email,
+      personalInfo.phone,
+      personalInfo.location,
+      personalInfo.website,
+      personalInfo.linkedin,
+      personalInfo.github,
+      personalInfo.twitter,
+      personalInfo.facebook,
+      personalInfo.instagram,
+    ].filter(Boolean) as string[];
 
-    // layout 'left' = photo left, coords right
-    // layout 'right' = coords left, photo right
     const isCenter = layout === 'center' || !isRow;
     const isCoordsOnRight = layout === 'left' && isRow;
-    const isCoordsOnLeft = layout === 'right' && isRow;
 
     return (
-      <div className={cn(
-        "text-[8.5pt] flex flex-wrap gap-x-3 gap-y-1",
-        isCenter ? "justify-center items-center" : 
-        isCoordsOnRight ? "flex-col items-end text-right" : "flex-col items-start text-left"
-      )}>
-        {items.map((item, idx) => (
-          <div key={idx} className={cn(
-            "flex items-center gap-1.5",
-            isCoordsOnRight ? "flex-row-reverse" : "flex-row"
-          )}>
-            <item.icon className="w-3 h-3 text-gray-400 shrink-0 self-center" />
-            <span className="leading-none">{item.value}</span>
-            {(isCenter && idx < items.length - 1) && <span className="text-gray-200 ml-1">|</span>}
-          </div>
+      <div
+        className={cn(
+          'text-[8.5pt] leading-normal',
+          isCenter
+            ? 'flex flex-wrap justify-center items-center gap-x-3 gap-y-1'
+            : cn(
+                'flex flex-col gap-y-1',
+                isCoordsOnRight ? 'items-end text-right' : 'items-start text-left'
+              )
+        )}
+      >
+        {items.map((value, idx) => (
+          <span key={idx} className="whitespace-nowrap">
+            {value}
+            {isCenter && idx < items.length - 1 && (
+              <span className="text-gray-200 ml-3" aria-hidden>
+                |
+              </span>
+            )}
+          </span>
         ))}
       </div>
     );
